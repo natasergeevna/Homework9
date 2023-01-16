@@ -1,4 +1,4 @@
-public class car {
+public class Сar {
     private String brand;
     private String model;
     private double engineVolume;
@@ -30,7 +30,16 @@ public class car {
         return this.color;
     }
 
-    public car(String brand, String model, int year, String country, String color, double engineVolume) {
+    public Сar(String brand, String model, int year, String country, String color, double engineVolume) {
+        String nullString = null;
+        String emptyString = "";
+        String blankString = " ";
+        if (brand.isBlank()) brand = "default";
+        if (model.isBlank()) model = "default";
+        if (country.isBlank()) country = "default";
+        if (color.isBlank()) color = "белый";
+        if (engineVolume <= 0) engineVolume = 1.5;
+        if (year <= 0) year = 2000;
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
@@ -41,16 +50,6 @@ public class car {
     }
 
     public String toString(){
-        String nullString = null;
-        String emptyString = "";
-        String blankString = " ";
-        if (brand == nullString || brand == emptyString || brand == blankString) brand = "default";
-        if (model == nullString || model == emptyString || model == blankString) model = "default";
-        if (country == nullString || country == emptyString || country == blankString) country = "default";
-        if (color == nullString || color == emptyString || color == blankString) color = "белый";
-        if (engineVolume <= 0) engineVolume = 1.5;
-        if (year <= 0) year = 2000;
-
         return this.brand + " " + this.model + ", " + this.year + " год выпуска, сборка в " + this.country + ", " + this.color + " цвет кузова, объем двигателя - " + this.engineVolume + " л.";
     }
 }
