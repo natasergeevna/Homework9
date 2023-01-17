@@ -31,13 +31,10 @@ public class Сar {
     }
 
     public Сar(String brand, String model, int year, String country, String color, double engineVolume) {
-        String nullString = null;
-        String emptyString = "";
-        String blankString = " ";
-        if (brand.isBlank()) brand = "default";
-        if (model.isBlank()) model = "default";
-        if (country.isBlank()) country = "default";
-        if (color.isBlank()) color = "белый";
+        if (brand == null || brand.isBlank()) brand = "default";
+        if (model == null ||model.isBlank()) model = "default";
+        if (country == null ||country.isBlank()) country = "default";
+        if (color == null ||color.isBlank()) color = "белый";
         if (engineVolume <= 0) engineVolume = 1.5;
         if (year <= 0) year = 2000;
         this.brand = brand;
